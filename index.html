@@ -33,7 +33,7 @@
         <p>Engine: 1.6L 4A-GE I4 (Inline-4)<br>Price: ₱1,800,000</p>
     </div>
 
-    <div><button class="button">Inquire Now</button></div>
+    <div><button class="button" onclick="openModal('ae86Modal')">Inquire Now</button></div>
        
    
       </section>
@@ -46,7 +46,7 @@
          <p>Engine: 1.3L 13B Wankel Rotary Engine<br>Price: ₱2,400,000</p>
      </div>
         
-     <div><button class="button">Inquire Now</button></div>
+     <div><button class="button" onclick="openModal('fdModal')">Inquire Now</button></div>
     
        </section>
 
@@ -58,10 +58,68 @@
          <p>Engine: 1.3L 13B Wankel Rotary Engine<br>Price: ₱2,800,000</p>
      </div>
 
-     <div><button class="button">Inquire Now</button></div>
+     <div><button class="button" onclick="openModal('fcModal')">Inquire Now</button></div>
         
     
        </section>
+
+    <!-- Modals -->
+    <div id="ae86Modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close">×</button>
+            <div class="modal-left">
+                <img src="img/Toyota AE86 Sprinter Trueno (1986).jpg" alt="Toyota Trueno AE86 (1986)" />
+            </div>
+            <div class="modal-right">
+                <h3>Toyota Trueno AE86 (1986)</h3>
+                <p><strong>Engine:</strong> 1.6L 4A-GE I4 (Inline-4)</p>
+                <p id="modal-price">₱1,800,000</p>
+                <label for="ae86-qty">Quantity:</label>
+                <input id="ae86-qty" type="number" min="1" value="1" />
+                <div class="modal-actions">
+                    <button id="ae86-add" class="modal-add-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fdModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close">×</button>
+            <div class="modal-left">
+                <img src="img/Mazda RX-7 FD3S (1992).jpg" alt="Mazda RX7 FD3S (1992)" />
+            </div>
+            <div class="modal-right">
+                <h3>Mazda RX7 FD3S (1992)</h3>
+                <p><strong>Engine:</strong> 1.3L 13B Wankel Rotary Engine</p>
+                <p id="modal-price">₱2,400,000</p>
+                <label for="fd-qty">Quantity:</label>
+                <input id="fd-qty" type="number" min="1" value="1" />
+                <div class="modal-actions">
+                    <button id="fd-add" class="modal-add-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="fcModal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Close">×</button>
+            <div class="modal-left">
+                <img src="img/Mazda RX-7 FC3S (1987).jpg" alt="Mazda RX-7 FC3S (1987)" />
+            </div>
+            <div class="modal-right">
+                <h3>Mazda RX-7 FC3S (1987)</h3>
+                <p><strong>Engine:</strong> 1.3L 13B Wankel Rotary Engine</p>
+                <p id="modal-price">₱2,800,000</p>
+                <label for="fc-qty">Quantity:</label>
+                <input id="fc-qty" type="number" min="1" value="1" />
+                <div class="modal-actions">
+                    <button id="fc-add" class="modal-add-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
       
       
@@ -79,6 +137,39 @@
             Contact: info@projectd.com | +81 936 405 8016
         </div>
     </footer>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).setAttribute('aria-hidden', 'false');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).setAttribute('aria-hidden', 'true');
+        }
+
+        // Close modal on close button click
+        document.querySelectorAll('.modal-close').forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.modal').setAttribute('aria-hidden', 'true');
+            });
+        });
+
+        // Close modal on background click
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(event) {
+                if (event.target === this) {
+                    this.setAttribute('aria-hidden', 'true');
+                }
+            });
+        });
+
+        // Add to cart functionality
+        document.querySelectorAll('.modal-add-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                alert('Added to cart! (This would add the car to your cart)');
+            });
+        });
+    </script>
 </body>
 
 

@@ -57,6 +57,7 @@ body {
     font-size: 2rem;
     position: relative;
     overflow: hidden;
+    padding-top: 120px;
 }
 
 .AE86 {
@@ -65,13 +66,13 @@ body {
 
 .panda_header{
     position: absolute; 
-    bottom: 200px; 
+    top: 150px; 
     left: 30px;
     color: white; 
     font-size: 60px; 
     padding: 10px; 
     border-radius: 5px; 
-    z-index: 100; 
+    z-index: 110; 
     line-height: 90px;
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
     
@@ -79,7 +80,7 @@ body {
   
 .panda-one{
     position: absolute; 
-    bottom: 40px; 
+    bottom: 30px; 
     left: 30px; 
     color: white; 
     font-size: 40px; 
@@ -97,6 +98,7 @@ body {
     font-size: 2rem;
     position: relative;
     overflow: hidden;
+    padding-top: 120px;
 }
 
 .FD {
@@ -105,20 +107,20 @@ body {
 
 .fd_header{
     position: absolute; 
-    bottom: 730px;
+    top: 150px;
     left: 30px; 
     color: white; 
     font-size: 60px; 
     padding: 10px; 
     border-radius: 5px; 
-    z-index: 100; 
+    z-index: 110; 
     line-height: 90px; 
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
 }
 
 .fd-two{
     position: absolute;
-    bottom: 570px; 
+    bottom: 30px; 
     left: 30px; 
     color: white; 
     font-size: 40px; 
@@ -139,6 +141,7 @@ body {
     font-size: 2rem;
     position: relative;
     overflow: hidden;
+    padding-top: 120px;
 }
 
 .FC {
@@ -147,20 +150,20 @@ body {
 
 .fc_header{
     position: absolute; 
-    bottom: 730px; 
+    top: 150px; 
     left: 30px; 
     color: white;
     font-size: 60px; 
     padding: 10px; 
     border-radius: 5px; 
-    z-index: 100; 
+    z-index: 110; 
     line-height: 90px;
     text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
 }
 
 .fc-three{
     position: absolute; 
-    bottom: 570px; 
+    bottom: 30px; 
     left: 30px; 
     color: white; 
     font-size: 40px; 
@@ -182,13 +185,13 @@ body {
     padding-left: 16px;
     padding-right: 16px;
     cursor: pointer;
-    margin-top: 690px;
-    margin-left: px;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
     transition: opacity 0.15s;
     vertical-align: top;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1)
-    
-
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1);
+    z-index: 100;
   }
 
   .button:hover{
@@ -215,7 +218,7 @@ header {
     box-shadow: var(--shadow-sm);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 999;
 }
 
 header img {
@@ -858,6 +861,41 @@ footer a:hover {
     cursor: not-allowed;
 }
 
+.modal-add-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1.1rem;
+}
+
+.modal-add-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px rgba(196, 30, 58, 0.4);
+}
+
+.modal-add-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+    font-size: 1.1rem;
+}
+
+#modal-add:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px rgba(196, 30, 58, 0.4);
+}
+
+#modal-add:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 @media (max-width: 768px) {
     .modal-content {
         flex-direction: column;
@@ -986,3 +1024,4 @@ button {
         transform: translateY(0);
     }
 }
+
